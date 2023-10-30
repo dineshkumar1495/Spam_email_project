@@ -10,11 +10,15 @@ The dataset used for training and testing the spam classifier is stored in a CSV
 
 1. Reading and Preparing the Data
 
+![Screenshot (350)](https://github.com/dineshkumar1495/Spam_email_project/assets/94850695/4680f3bc-7996-43de-8e10-793430a84993)
+
+
    - The CSV file `mail_data.csv` is read using the `pandas` library to load the dataset into a DataFrame.
    - Any missing values in the DataFrame are replaced with empty strings using the `where` method.
    - The DataFrame is examined using `head`, `info`, and `shape` to get an overview of the data.
 
 2. Data Preprocessing
+![Screenshot (351)](https://github.com/dineshkumar1495/Spam_email_project/assets/94850695/c6d39c85-7ad9-4f1c-89dc-cfe80accf5ee)
 
    - The "Category" column values are converted to numeric representation. "spam" is mapped to 0, and "ham" is mapped to 1.
    - The feature and target variables, X and Y respectively, are extracted from the DataFrame.
@@ -27,6 +31,8 @@ The dataset used for training and testing the spam classifier is stored in a CSV
 
 4. Feature Extraction
 
+![Screenshot (352)](https://github.com/dineshkumar1495/Spam_email_project/assets/94850695/83e1ec2d-ad98-4e1a-8ed7-1446314aa3a4)
+
    - The TF-IDF vectorizer from `sklearn.feature_extraction.text` is used to convert the text data into numerical features.
    - The vectorizer is instantiated with the following settings:
      - `min_df=1`: Specifies that a term must appear in at least one document to be considered.
@@ -36,6 +42,8 @@ The dataset used for training and testing the spam classifier is stored in a CSV
 
 5. Model Training and Evaluation
 
+![image](https://github.com/dineshkumar1495/Spam_email_project/assets/94850695/575ef548-bc01-46f9-83ac-3f6206cc414c)
+
    - A Logistic Regression model is created using the `LogisticRegression` class from `sklearn.linear_model`.
    - The model is trained on the training data features (`X_train_features`) and the corresponding labels (`Y_train`) using the `fit` method.
    - The accuracy of the model is evaluated on both the training and testing data using the `accuracy_score` function from `sklearn.metrics`.
@@ -43,6 +51,8 @@ The dataset used for training and testing the spam classifier is stored in a CSV
    - The accuracy score on the testing data is printed.
 
 6. Predicting Email Category
+
+![Screenshot (354)](https://github.com/dineshkumar1495/Spam_email_project/assets/94850695/b7e9e005-5586-4087-b1e3-21827cc27ad0)
 
    - An example email is provided as input text (`input_your_mail`).
    - The input text is transformed into feature representation using the same TF-IDF vectorizer (`input_data_feature`).
